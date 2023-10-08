@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Sample array of customer objects
+var customers = [
+{ customerID: 1, customerName: "Alice", totalBillingAmount: 2500 },
+{ customerID: 2, customerName: "Bob", totalBillingAmount: 3500 },
+{ customerID: 3, customerName: "Charlie", totalBillingAmount: 2800 },
+{ customerID: 4, customerName: "David", totalBillingAmount: 4000 },
+{ customerID: 5, customerName: "Eva", totalBillingAmount: 3200 }
+];
+
+
+// Filter customers with total billing amount greater than Rs. 3000
+var highValueCustomers = customers.filter(function(customer) {
+return customer.totalBillingAmount > 3000;
+});
+
+// Extract customer names and purchase details using map
+var customerDetails = highValueCustomers.map(function(customer) {
+return {
+    customerName: customer.customerName,
+    purchaseDetails: "Customer ID: " + customer.customerID + ", Total Billing Amount: Rs. " + customer.totalBillingAmount
+};
+});
+
+// Print the list of high-value customers and their purchase details
+customerDetails.forEach(function(customer) {
+console.log(customer.customerName + ": " + customer.purchaseDetails);
+});
+
+    </script>
+</body>
+</html>

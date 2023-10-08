@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var obj= { "John Doe": "123-456-7890", "Emma Smith": "987-654-3210" };
+         function search(name){
+            console.log(name);
+            for(let key in obj){
+                if(key==name){
+                    console.log("mobile number is",obj[key]);
+
+                }else{
+                    console.log("key does not exit");
+                }
+            }
+
+         }
+         search("Emma Smith");
+    </script>
+</body>
+</html>
+<!-- obj= how to access abj key and its value  -->
+<!-- how to travel in obj using for in loop -->

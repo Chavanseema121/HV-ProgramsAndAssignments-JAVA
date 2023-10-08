@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj={ name: "John", grade: 85 };
+        function updategarde(student,newgrade){
+            student.grade=newgrade;
+            return student;
+        }
+        var student={name:"John",garde:85};
+        var newgrade = 90;
+
+        updategarde(newgrade,student);
+        console.log("the updated student obj",student);
+
+    </script>
+</body>
+</html>

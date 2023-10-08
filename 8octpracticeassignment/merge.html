@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* function mergeSortedArrays(arr1, arr2) {
+            var mergedArray = [];
+            var i = 0;
+            var j = 0;
+        
+            // Iterate through both arrays
+            while (i < arr1.length && j < arr2.length) {
+                if (arr1[i] < arr2[j]) {
+                    mergedArray.push(arr1[i]);
+                    i++;
+                } else {
+                    mergedArray.push(arr2[j]);
+                    j++;
+                }
+            }
+        
+            // If there are remaining elements in arr1, add them to mergedArray
+            while (i < arr1.length) {
+                mergedArray.push(arr1[i]);
+                i++;
+            }
+        
+            // If there are remaining elements in arr2, add them to mergedArray
+            while (j < arr2.length) {
+                mergedArray.push(arr2[j]);
+                j++;
+            }
+        
+            return mergedArray;
+        }*/
+        
+        // Example input arrays
+        var arr1 = [1, 3, 5];
+        var arr2 = [2, 4, 6];
+        var arr3 =arr1.concat(arr2);
+        //console.log(arr3);
+        var arr4 =arr3.sort((a,b)=>a-b);
+        console.log(arr4);
+        
+       /* // Call the function and print the output
+        var mergedArray = mergeSortedArrays(arr1, arr2);
+        console.log("Merged Sorted Array:", mergedArray); */
+        
+    
+        
+    </script>
+</body>
+</html>

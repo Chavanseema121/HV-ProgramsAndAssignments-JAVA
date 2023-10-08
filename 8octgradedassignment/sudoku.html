@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isValidSudoku(board) {
+            // Function to check if an array contains duplicates
+            function hasDuplicate(array) {
+                const seen = new Set();
+                for (let num of array) {
+                    if (num !== '.' && seen.has(num)) {
+                        return true;
+                    }
+                    seen.add(num);
+                }
+                return false;
+            }
+        
+            // Check rows
+            for (let row of board) {
+                if (hasDuplicate(row)) {
+                    return false;
+                }
+            }
+        
+            // Check columns
+            for (let col = 0; col < 9; col++) {
+                const column = [];
+                for (let row = 0; row < 9; row++) {
+                    column.push(board[row][col]);
+                }
+                if (hasDuplicate(column)) {
+                    return false;
+                }
+            }
+        
+            // Check sub-boxes
+            for (let boxRow = 0; boxRow < 3; boxRow++) {
+                for (let boxCol = 0; boxCol < 3; boxCol++) {
+                    const subBox = [];
+                    for (let row = boxRow * 3; row < boxRow * 3 + 3; row++) {
+                        for (let col = boxCol * 3; col < boxCol * 3 + 3; col++) {
+                            subBox.push(board[row][col]);
+                        }
+                    }
+                    if (hasDuplicate(subBox)) {
+                        return false;
+                    }
+                }
+            }
+        
+            return true; // Valid Sudoku board
+        }
+        
+        // Example Sudoku board
+        const board = [
+            ["5","3",".",".","7",".",".",".","."],
+            ["6",".",".","1","9","5",".",".","."],
+            [".","9","8",".",".",".",".","6","."],
+            ["8",".",".",".","6",".",".",".","3"],
+            ["4",".",".","8",".","3",".",".","1"],
+            ["7",".",".",".","2",".",".",".","6"],
+            [".","6",".",".",".",".","2","8","."],
+            [".",".",".","4","1","9",".",".","5"],
+            [".",".",".",".","8",".",".","7","9"]
+        ];
+        
+        // Check if the Sudoku board is valid and log the result
+        console.log(isValidSudoku(board)); 
+        
+    </script>
+</body>
+</html>
